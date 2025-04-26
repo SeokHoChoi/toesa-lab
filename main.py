@@ -11,23 +11,18 @@ def main():
         st.session_state.show_content = False
 
     st.markdown("""
-    <!-- Pretendard 폰트 link 추가 -->
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" type="text/css">
-
     <style>
-        /* 기본 폰트 및 배경 */
-        html, body, [data-testid="stApp"] {
-            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-            background: linear-gradient(145deg, #f0f2f5, #ffffff);
-            color: #374151;
-            min-height: 100vh;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
         
-        /* 메인 박스 */
-        .main, .box {
+        html, body, [data-testid="stApp"] {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: white;
+            color: #374151;
+        }
+
+        .main {
             background: white;
             padding: 4rem 3rem;
-            border-radius: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             animation: fadeIn 1.2s ease;
         }
@@ -37,7 +32,6 @@ def main():
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 제목 스타일 */
         .title {
             background: linear-gradient(90deg, #6a11cb, #2575fc);
             -webkit-background-clip: text;
@@ -64,7 +58,6 @@ def main():
             margin-bottom: 3rem;
         }
 
-        /* 그리드 레이아웃 */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -72,21 +65,21 @@ def main():
             margin: 3rem 0;
         }
 
-        /* 카드 아이템 */
         .feature-item {
             background: linear-gradient(135deg, #eef2f7, #ffffff);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.7s ease;
         }
 
         .feature-item.show {
             opacity: 1;
             transform: translateY(0);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
         }
 
         .feature-icon {
@@ -107,7 +100,6 @@ def main():
             color: #6b7280;
         }
 
-        /* 안내 박스 */
         .info-box {
             background: linear-gradient(135deg, #c7d2fe, #e0e7ff);
             padding: 2rem;
@@ -119,7 +111,7 @@ def main():
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.7s ease;
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
         }
 
         .info-box.show {
@@ -127,7 +119,7 @@ def main():
             transform: translateY(0);
         }
 
-        /* 버튼 스타일 */
+        /* 버튼 */
         div[data-testid="stButton"] {
             display: flex;
             justify-content: center;
@@ -157,18 +149,29 @@ def main():
             box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
         }
 
-        /* 아코디언 영역 */
+        /* 아코디언 */
         .accordion-area {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.8s cubic-bezier(.4,0,.2,1);
+            will-change: max-height;
         }
 
         .accordion-area.show {
             max-height: 1000px;
+            transition: max-height 0.8s cubic-bezier(.4,0,.2,1);
         }
 
-        /* 이미지 중앙 정렬 + 흔들기 */
+        /* box */
+        .box {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1.2s ease;
+        }
+
+        /* 이미지 흔들기 및 중앙정렬 */
         div[data-testid="stImage"] {
             display: flex;
             justify-content: center;
@@ -176,19 +179,29 @@ def main():
         }
 
         div[data-testid="stImage"] img {
+            display: block;
             animation: shake 2s infinite;
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30% { transform: translateX(-6px); }
-            20%, 40% { transform: translateX(6px); }
-            50% { transform: translateX(0); }
+            0% { transform: translateX(0);}
+            10% { transform: translateX(-6px);}
+            20% { transform: translateX(6px);}
+            30% { transform: translateX(-6px);}
+            40% { transform: translateX(6px);}
+            50% { transform: translateX(0);}
+            100% { transform: translateX(0);}
+        }
+
+        @media (max-width: 768px) {
+            .main { padding: 2rem 1.5rem; }
+            .title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .description { font-size: 1rem; }
         }
     </style>
     """, unsafe_allow_html=True)
 
-    # 페이지 본문
     st.image("images/logo.png", width=460)
     st.markdown('<h2 class="subtitle">이직을 고민하는 당신을 위한 커리어 연구소</h2>', unsafe_allow_html=True)
     st.markdown("""
@@ -200,11 +213,9 @@ def main():
     </p>
     """, unsafe_allow_html=True)
 
-    # 시작하기 버튼
     if st.button("시작하기", key="start_btn"):
         st.session_state.show_content = True
 
-    # 카드 및 안내문구
     show_class = "show" if st.session_state.show_content else ""
     st.markdown(f"""
     <div class="accordion-area {show_class}">
@@ -231,6 +242,8 @@ def main():
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
