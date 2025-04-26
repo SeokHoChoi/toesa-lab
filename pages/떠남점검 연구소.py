@@ -150,10 +150,11 @@ def generate_result(history):
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=300,
+        max_tokens=500,  # max_tokens를 늘려서 더 긴 답변을 받을 수 있도록 설정
         temperature=0.7
     )
     return response.choices[0].message.content.strip()
+
 
 # --- 퇴사 위험도 점수 추출 ---
 def extract_score(text):
