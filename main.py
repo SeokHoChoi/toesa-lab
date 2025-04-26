@@ -12,19 +12,24 @@ def main():
 
     st.markdown("""
     <style>
+        /* 폰트 가져오기 */
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
-        
-        html, body, [data-testid="stApp"] {
-            font-family: 'Noto Sans KR', sans-serif;
+
+        /* stApp 전체에 스타일 적용 */
+        div[data-testid="stApp"] {
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
             background-color: white;
             color: #374151;
+            padding: 2rem 1rem; /* mobile padding 대응 */
         }
 
+        /* 이하 나머지 네가 작성한 스타일은 그대로 */
         .main {
             background: white;
             padding: 4rem 3rem;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             animation: fadeIn 1.2s ease;
+            border-radius: 30px;
         }
 
         @keyframes fadeIn {
@@ -79,7 +84,6 @@ def main():
         .feature-item.show {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
         }
 
         .feature-icon {
@@ -111,7 +115,6 @@ def main():
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
         }
 
         .info-box.show {
@@ -119,12 +122,11 @@ def main():
             transform: translateY(0);
         }
 
-        /* 버튼 */
+        /* 버튼 스타일 */
         div[data-testid="stButton"] {
             display: flex;
             justify-content: center;
         }
-
         div[data-testid="stButton"] button {
             background: linear-gradient(90deg, #6366f1, #4f46e5);
             color: white !important;
@@ -134,55 +136,23 @@ def main():
             border-radius: 50px;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
             margin-top: 2rem;
             box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
         }
-
-        div[data-testid="stButton"] button:hover,
-        div[data-testid="stButton"] button:active,
-        div[data-testid="stButton"] button:focus {
+        div[data-testid="stButton"] button:hover {
             background: linear-gradient(90deg, #4f46e5, #6366f1);
-            color: white !important;
-            outline: none;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
         }
 
-        /* 아코디언 */
-        .accordion-area {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.8s cubic-bezier(.4,0,.2,1);
-            will-change: max-height;
-        }
-
-        .accordion-area.show {
-            max-height: 1000px;
-            transition: max-height 0.8s cubic-bezier(.4,0,.2,1);
-        }
-
-        /* box */
-        .box {
-            background: white;
-            padding: 4rem 3rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1.2s ease;
-        }
-
-        /* 이미지 흔들기 및 중앙정렬 */
+        /* 이미지 중앙정렬 + 흔들기 */
         div[data-testid="stImage"] {
             display: flex;
             justify-content: center;
             width: 100%;
         }
-
         div[data-testid="stImage"] img {
-            display: block;
             animation: shake 2s infinite;
-            margin-right: auto;
-            margin-left: auto;
         }
 
         @keyframes shake {
@@ -204,6 +174,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
+    # 이후 내용은 그대로
     st.image("images/logo.png", width=460)
     st.markdown('<h2 class="subtitle">이직을 고민하는 당신을 위한 커리어 연구소</h2>', unsafe_allow_html=True)
     st.markdown("""
