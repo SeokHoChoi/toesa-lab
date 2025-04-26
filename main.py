@@ -209,7 +209,6 @@ def main():
         div[data-testid="stImage"] img {
             animation: shake 2s infinite;
         }
-
     </style>
     """, unsafe_allow_html=True)
 
