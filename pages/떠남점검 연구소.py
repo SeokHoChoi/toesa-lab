@@ -166,6 +166,7 @@ def extract_score(text):
 # --- 떠남적합성 지수 시각화 ---
 def plot_risk_score(score):
     option = {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "series": [
             {
                 "type": "liquidFill",
