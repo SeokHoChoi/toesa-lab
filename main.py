@@ -13,9 +13,10 @@ def main():
     st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
-        html, body, [class*="css"] {
-            font-family: 'Pretendard', sans-serif;
-            background: linear-gradient(145deg, #f0f2f5, #ffffff);
+        html, body, [data-testid="stApp"] {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: white; /* 하얀 배경 */
+            color: #374151; /* 기본 글자색 */
         }
         .main {
             background: white;
@@ -253,6 +254,8 @@ def main():
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
