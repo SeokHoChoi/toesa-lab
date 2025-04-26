@@ -22,8 +22,6 @@ def main():
             padding: 4rem 3rem;
             # border-radius: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            # max-width: 900px;
-            # margin: 3rem auto;
             animation: fadeIn 1.2s ease;
         }
         @keyframes fadeIn {
@@ -255,8 +253,6 @@ def main():
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-    st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
