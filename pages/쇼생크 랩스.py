@@ -17,11 +17,34 @@ st.set_page_config(page_title="쇼생크 랩스 챗", page_icon="🏝️")
 def show_header():
     st.markdown(
         """
-        <div style='text-align: center; font-size: 28px; font-weight: bold; margin-bottom: 10px;'>
-            🏝️ 쇼생크 랩스 챗
-        </div>
-        <div style='text-align: center; font-size: 16px; color: gray; margin-bottom: 30px;'>
-            퇴사는 감정이 아니라 전략입니다.<br>아마다르 자와타네호를 향해 떠나보세요.
+        <style>
+            .header {
+                text-align: center;
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #2563EB;
+            }
+            .subheader {
+                text-align: center;
+                font-size: 16px;
+                color: gray;
+                margin-bottom: 30px;
+            }
+            .header-container {
+                padding: 30px 10px;
+                background-color: #f3f4f6;
+                border-radius: 12px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        <div class="header-container">
+            <div class="header">
+                🏝️ 쇼생크 랩스 챗
+            </div>
+            <div class="subheader">
+                퇴사는 감정이 아니라 전략입니다.<br>아마다르 자와타네호를 향해 떠나보세요.
+            </div>
         </div>
         """,
         unsafe_allow_html=True
