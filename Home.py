@@ -7,6 +7,9 @@ def main():
         layout="centered"
     )
 
+    # 사이드바에 제목 표시
+    st.sidebar.title("퇴사연구소")
+
     if 'show_content' not in st.session_state:
         st.session_state.show_content = False
 
