@@ -188,15 +188,18 @@ def main():
 
     st.markdown('<div class="persona-grid">', unsafe_allow_html=True)
     for persona in persona_list:
+        lab_url = f"/{persona['연구소']}"  # 원하는 경로로 이동
         st.markdown(f"""
-        <div class="persona-card">
-            <div class="persona-title">
-                <span>{persona['이모지']}</span>
-                <span>{persona['이름']}</span>
+        <a href="{lab_url}" target="_self" style="text-decoration:none;color:inherit;">
+            <div class="persona-card">
+                <div class="persona-title">
+                    <span>{persona['이모지']}</span>
+                    <span>{persona['이름']}</span>
+                </div>
+                <div class="persona-subtitle"><strong>담당 연구소:</strong> {persona['연구소']}</div>
+                <div class="persona-description">{persona['설명']}</div>
             </div>
-            <div class="persona-subtitle"><strong>담당 연구소:</strong> {persona['연구소']}</div>
-            <div class="persona-description">{persona['설명']}</div>
-        </div>
+        </a>
         """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
