@@ -203,7 +203,7 @@ def main():
     # Footer
     st.markdown("""
     <div class="footer">
-        © 2024 퇴사연구소. All rights reserved.
+        © 2025 퇴사연구소. All rights reserved.
     </div>
     """, unsafe_allow_html=True)
 

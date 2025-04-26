@@ -193,7 +193,7 @@ def display_job_categories_and_keywords(data):
     # Footer
     st.markdown("""
     <div class="footer">
-        © 2024 퇴사연구소. All rights reserved.
+        © 2025 퇴사연구소. All rights reserved.
     </div>
     """, unsafe_allow_html=True)
 
