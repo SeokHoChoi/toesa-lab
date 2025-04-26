@@ -153,6 +153,8 @@ def main():
         }
         div[data-testid="stImage"] img {
             animation: shake 2s infinite;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes shake {
