@@ -44,7 +44,7 @@ def main():
             font-weight: 600;
             color: #4b5563;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
         }
         .description {
             font-size: 1.2rem;
@@ -209,6 +209,7 @@ def main():
         div[data-testid="stImage"] img {
             animation: shake 2s infinite;
         }
+
     </style>
     """, unsafe_allow_html=True)
 
