@@ -2,7 +2,7 @@ import streamlit as st
 
 def main():
     st.set_page_config(
-        page_title="우리의 페르소나 - 퇴사연구소",
+        page_title="우리의 연구소 - 퇴사연구소",
         page_icon="🎭",
         layout="wide"
     )
@@ -131,26 +131,26 @@ def main():
     # 헤더
     st.markdown("""
     <div class="header">
-        <div class="title">🎭 우리의 페르소나</div>
+        <div class="title">🎭 퇴사연구소 소개</div>
         <div class="subtitle">퇴사는 감정이 아니라 전략이다 - 퇴사연구소 일동</div>
     </div>
     """, unsafe_allow_html=True)
 
     # 페르소나 소개
-    st.markdown("""
-    <div class="content-section">
-        <div class="content-title">페르소나란?</div>
-        <div class="content-text">
-            <strong>페르소나(persona)</strong>는 원래 연극에서 배우가 쓰던 '가면'에서 유래한 말이에요.<br>
-            심리학에서는 '사회적 역할' 또는 '타인에게 보여지는 나'를 의미하죠.<br>
-            서비스 기획에서는 제품이나 서비스의 주요 고객을 대표하는 가상의 인물을 뜻하기도 해요.
-        </div>
-        <div class="quote">
-            진짜 나와는 조금 다를 수 있지만, 사회와 관계 속에서 내가 보여주는 모습,<br>
-            또는 우리 팀이 세상에 보여주고 싶은 얼굴이 바로 페르소나입니다.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    # st.markdown("""
+    # <div class="content-section">
+    #     <div class="content-title">페르소나란?</div>
+    #     <div class="content-text">
+    #         <strong>페르소나(persona)</strong>는 원래 연극에서 배우가 쓰던 '가면'에서 유래한 말이에요.<br>
+    #         심리학에서는 '사회적 역할' 또는 '타인에게 보여지는 나'를 의미하죠.<br>
+    #         서비스 기획에서는 제품이나 서비스의 주요 고객을 대표하는 가상의 인물을 뜻하기도 해요.
+    #     </div>
+    #     <div class="quote">
+    #         진짜 나와는 조금 다를 수 있지만, 사회와 관계 속에서 내가 보여주는 모습,<br>
+    #         또는 우리 팀이 세상에 보여주고 싶은 얼굴이 바로 페르소나입니다.
+    #     </div>
+    # </div>
+    # """, unsafe_allow_html=True)
 
     # 퇴사연구소 철학
     st.markdown("""
@@ -169,10 +169,9 @@ def main():
     # 사주풀이 설명
     st.markdown("""
     <div class="content-section">
-        <div class="content-title">퇴사연구소 사주풀이</div>
+        <div class="content-title">퇴사연구소의 다섯명의 퇴사전문가를 만나보세요.</div>
         <div class="content-text">
-            퇴사연구소에는 각기 다른 색깔과 전문성을 가진 5명의 연구원이 있습니다.<br>
-            각 연구소(연구원)의 페르소나를 클릭해 사주풀이처럼 만나보세요!
+            아래 연구원들을 클릭하시면 각 연구소 서비스를 이용해 보실 수 있습니다.
         </div>
     </div>
     """, unsafe_allow_html=True)
