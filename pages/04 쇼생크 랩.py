@@ -55,7 +55,7 @@ def initialize_session():
         st.session_state.messages = []
         st.session_state.messages.append({
             "role": "assistant",
-            "content": "🏝️ 쇼생크 랩스 챗에 오신 걸 환영합니다!\n\n지금 느끼는 감정이나 고민을 자유롭게 적어주세요. 아주 사소한 이야기라도 괜찮아요. 당신의 이야기를 듣고 함께 고민해드릴게요."
+            "content": "🏝️ 당신의 탈옥(퇴사/이직)을 도울 쇼생크 랩에 오신 걸 환영합니다!\n\n쇼생크 탈출은 단순한 탈옥 이야기가 아닙니다.\n\n쇼생크 탈출에서 주인공은 치밀한 전략을 통해 성공적인 탈옥 후 **미리 준비한 가명과 자금을 이용해** 멕시코의 작은 해변 마을 ‘자와타네호(Zihuatanejo)’에서 행복한 여생을 지냅니다.\n\n여러분들의 성공적인 퇴사/이직을 **쇼생크 랩스**와 함께 준비하여 당신만의 ‘자와타네호(Zihuatanejo)’로 가보시는건 어떨까요?\n\n\n\n지금 느끼는 감정이나 고민을 자유롭게 적어주세요. 아주 사소한 이야기라도 괜찮아요. 당신의 이야기를 듣고 함께 고민해드릴게요."
         })
     if "step" not in st.session_state:
         st.session_state.step = 1
