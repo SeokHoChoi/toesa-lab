@@ -52,7 +52,7 @@ git clone https://github.com/SeokHoChoi/toesa-lab.git
 cd toesa-lab
 
 # 의존성 설치
-pip install -r requirements.txt
+pip freeze > requirements.txt
 
 # 애플리케이션 실행
 streamlit run main.py
